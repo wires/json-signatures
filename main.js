@@ -45,11 +45,11 @@ exports.sign = function (keypair, message) {
   }
 }
 
-exports.verify = function (public, signedMessage) {
+exports.verify = function (signedMessage) {
   const msg = signedMessage.message
   const sig = base642hex(signedMessage.signedBy.signature)
   const m = str2hex(canonicalStringify(signedMessage.message))
-  const key = ec.keyFromPublic(base642hex(public), 'hex')
+  const key = ec.keyFromPublic(base642hex(signedMessage.signedBy.pubkey), 'hex')
   const valid = key.verify(m, sig)
   return valid
 }

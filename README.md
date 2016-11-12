@@ -13,7 +13,7 @@ const msg = {b: 'foo', a: [1,2,3], c: [1,[{}]]}
 const signedMessage = JSONSign.sign(kp, msg)
 
 // see if it has a valid signature
-JSONSign.verify(kp.public, signedMessage) // => true
+JSONSign.verify(signedMessage) // => true
 ```
 
 Basically, it takes a JSON message `M` and a secret key,
@@ -70,7 +70,7 @@ The resulting `signedMessage` will look like this:
 Later, only a public key is needed to verify a message:
 
 ```js
-if (! JSONSign.verify(signedMessage, kp.public) ) {
+if (! JSONSign.verify(signedMessage) ) {
   // message was tampered with
 }
 ```

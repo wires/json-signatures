@@ -15,6 +15,6 @@ const signedMessage = JSONSign.sign(kp, msg)
 console.log(`signedMessage=${r(signedMessage)}`)
 
 // check if signed message is valid
-const valid = JSONSign.verify(kp.public, signedMessage)
+const valid = JSONSign.verify(signedMessage)
 
 console.log(`valid=${r(valid)}`)
