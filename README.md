@@ -81,4 +81,4 @@ if (! JSONSign.verify(signedMessage) ) {
 - Algorithm used is [ed2219](https://ed25519.cr.yp.to/) = (Curve25519 + EdDSA) [see pg. 7](https://ed25519.cr.yp.to/ed25519-20110926.pdf)
 - Implementation is [elliptic](https://github.com/indutny/elliptic)
 - Uses [`secure-random`](npm.im/secure-random) to generate secret
-- Uses [`canonical-json`](npm.im/canonical-json) to create the string on which the signature is based
+- Uses [`canonical-json`](npm.im/canonical-json) to create the string on which the signature is based. Also http://wiki.laptop.org/go/Canonical_JSON
