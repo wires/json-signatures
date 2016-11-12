@@ -1,5 +1,5 @@
 {
-  "name": "jsonsign",
+  "name": "json-signatures",
   "version": "1.0.0",
   "description": "Sign and verify JSON data",
   "main": "main.js",
@@ -9,7 +9,7 @@
   "dependencies": {
     "canonical-json": "^0.0.4",
     "elliptic": "^6.3.2",
-    "secure-random": "^1.1.1",
+    "secure-random": "^1.1.1"
   },
   "devDependencies": {
     "prttty": "^0.9.1"
