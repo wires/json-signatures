@@ -2,7 +2,7 @@
 
 Simplified API to sign and verify JSON data. Summary:
 
-```
+```js
 const JSONSign = require('json-signatures')
 
 // create keypair
@@ -19,7 +19,7 @@ JSONSign.verify(kp.public, signedMessage) // => true
 Basically, it takes a JSON message `M` and a secret key,
 and turns it into JSON which can be used to verify M:
 
-```
+```js
 { message: M
 , signedBy: {
     pubkey: "HPe1gjvok8tL8wYQUJKnYHhWxhPNVywQ0kjDEjTxozE=",
@@ -40,7 +40,7 @@ const kp = JSONSign.keypair(nrOfRandomBytesForSecret)
 
 It looks like
 
-```
+```js
 {
   public: "HPe1gjvok8tL8wYQUJ...VywQ0kjDEjTxozE=",
   secret: "QM+USi7HbuRHU1/DdYkzL322XNm3qJ...D+LLpjw=="
@@ -49,7 +49,7 @@ It looks like
 
 Then, you can use it to sign a JSON dictionary,
 
-```
+```js
 const signedMessage = JSONSign.sign(kp, M)
 ```
 
@@ -57,7 +57,7 @@ A missing `kp.public` value will be derived from the `kp.secret`.
 
 The resulting `signedMessage` will look like this:
 
-```
+```js
 {
   message: M,
   signedBy: {
@@ -69,7 +69,7 @@ The resulting `signedMessage` will look like this:
 
 Later, only a public key is needed to verify a message:
 
-```
+```js
 if (! JSONSign.verify(signedMessage, kp.public) ) {
   // message was tampered with
 }
