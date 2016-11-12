@@ -1,6 +1,6 @@
 {
   "name": "json-signatures",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sign and verify JSON data",
   "main": "main.js",
   "keywords": ["json", "signature", "crypto", "elliptic", "ed25519"],
