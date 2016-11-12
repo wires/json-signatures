@@ -1,0 +1,17 @@
+{
+  "name": "jsonsign",
+  "version": "1.0.0",
+  "description": "Sign and verify JSON data",
+  "main": "main.js",
+  "keywords": ["json", "signature", "crypto", "elliptic", "ed25519"],
+  "author": "Jelle Herold <jelle@defekt.nl>",
+  "license": "AGPL-1.0",
+  "dependencies": {
+    "canonical-json": "^0.0.4",
+    "elliptic": "^6.3.2",
+    "secure-random": "^1.1.1",
+  },
+  "devDependencies": {
+    "prttty": "^0.9.1"
+  }
+}
