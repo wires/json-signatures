@@ -23,10 +23,10 @@ exports.keypair = function (secretSize) {
   }
 }
 
-exports.sign = function (keypair, message) {
+exports.sign = function (secret, message) {
   const m = canonicalStringify(message)
   const mh = str2hex(m)
-  const key = ec.keyFromSecret(base642hex(keypair.secret), 'hex')
+  const key = ec.keyFromSecret(base642hex(secret), 'hex')
   const sig = key.sign(mh)
   const sigEnc = hex2base64(sig.toHex().toLowerCase())
 
@@ -39,7 +39,7 @@ exports.sign = function (keypair, message) {
   return {
     message: JSON.parse(m),
     signedBy: {
-      pubkey: keypair.public || hex2base64(key.getPublic('hex')),
+      pubkey: hex2base64(key.getPublic('hex')),
       signature: sigEnc
     }
   }

@@ -10,7 +10,7 @@ const kp = JSONSign.keypair()
 
 // whatever, sign it
 const msg = {b: 'foo', a: [1,2,3], c: [1,[{}]]}
-const signedMessage = JSONSign.sign(kp, msg)
+const signedMessage = JSONSign.sign(kp.secret, msg)
 
 // see if it has a valid signature
 JSONSign.verify(signedMessage) // => true
@@ -50,10 +50,10 @@ It looks like
 Then, you can use it to sign a JSON dictionary,
 
 ```js
-const signedMessage = JSONSign.sign(kp, M)
+const signedMessage = JSONSign.sign(kp.secret, M)
 ```
 
-A missing `kp.public` value will be derived from the `kp.secret`.
+The public key will be derived from the passed secret key.
 
 The resulting `signedMessage` will look like this:
 
@@ -67,7 +67,8 @@ The resulting `signedMessage` will look like this:
 }
 ```
 
-Later, only a public key is needed to verify a message:
+Later, you can verify is a message is signed by a person with
+the secret corresponding to the public key.
 
 ```js
 if (! JSONSign.verify(signedMessage) ) {

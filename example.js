@@ -10,7 +10,7 @@ console.log(`keypair=${r(kp)}`)
 const msg = {b: 'foo', a: [1,2,3], c: [1,[{}]]}
 
 // sign the message (only kp.secret is needed)
-const signedMessage = JSONSign.sign(kp, msg)
+const signedMessage = JSONSign.sign(kp.secret, msg)
 
 console.log(`signedMessage=${r(signedMessage)}`)
 

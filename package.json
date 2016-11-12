@@ -1,7 +1,7 @@
 {
   "name": "json-signatures",
-  "version": "1.0.1",
-  "description": "Sign and verify JSON data",
+  "version": "1.0.2",
+  "description": "Add a signature to JSON data and verify it",
   "main": "main.js",
   "keywords": ["json", "signature", "crypto", "elliptic", "ed25519"],
   "author": "Jelle Herold <jelle@defekt.nl>",
