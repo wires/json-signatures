@@ -7,7 +7,7 @@ Simplified API to sign and verify JSON data.
   ```js
   { data: { /* could be any JSON.stringify-able thing */ }
   , signature: {
-      publicKey: 'base64-string',
+      pubkey: 'base64-string',
       sig: 'base64-string'
     }
   }
@@ -30,7 +30,7 @@ JSgn.verify(signed) //=> true
 
 // also
 signed.data === myMessage
-keypair.public === signed.signature.publicKey
+keypair.public === signed.signature.pubkey
 ```
 
 ### About keys
@@ -82,7 +82,7 @@ The resulting `signedMessage` will look like this (public key is derived from se
 {
   data: msg,
   signature: {
-    publicKey: kp.public,
+    pubkey: kp.public,
     sig: "+AAhMxhhjvz5CUEbZcziqb...ds/g6xFbU8WXLkdbloOUHBw=="
   }
 }
